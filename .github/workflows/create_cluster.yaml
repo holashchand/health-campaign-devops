@@ -16,7 +16,7 @@ on:
 jobs:
   Input_validation:
     if: ${{ github.event_name == 'push' }}
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-20.04
     env:
       TF_IN_AUTOMATION: "true"
       AWS_ACCESS_KEY_ID:  ${{ secrets.AWS_ACCESS_KEY_ID }}
