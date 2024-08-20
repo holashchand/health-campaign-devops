@@ -1,0 +1,102 @@
+
+version: v1.5
+modules:
+  - name: backbone
+    services:
+      - kafka-kraft
+      - kafka-connect
+      - kafka-connect-restart-tasks
+      - elasticsearch-data
+      - elasticsearch-master
+      - kibana
+  - name: authn-authz
+    services:
+      - redis
+      - ingress-nginx
+      - cert-manager
+      - zuul:v1.3.1-96b24b0d72-39
+  - name: core
+    dependencies:
+      - "backbone"
+      - "authn-authz"
+      - "frontend"
+    services:
+      - egovio/egov-accesscontrol:v1.1.3-72f8a8f87b-24
+      - egovio/egov-enc-service:v1.1.2-72f8a8f87b-9
+      - egovio/egov-localization:v1.1.3-72f8a8f87b-6
+      - egovio/egov-idgen:v1.2.3-72f8a8f87b-7
+      - egovio/egov-filestore:v1.2.4-72f8a8f87b-10
+      - egovio/egov-indexer:indexer-17-searchBody-1799f17903-57
+      - egovio/egov-notification-mail:health-digit-master-6865af2823-2
+      - egovio/egov-notification-sms:v1.1.3-48a03ad7bb-10
+      - egovio/egov-otp:v1.2.2-72f8a8f87b-12
+      - egovio/egov-persister:v1.1.5-3371bc2-5
+      ## - egovio/egov-url-shortening:v1.1.2-1715164454-3 not used in health now
+      - egovio/egov-user:health-digit-master-e27b970-31
+      - egovio/user-otp:health-digit-master-6865af2823-3
+      - egovio/egov-workflow-v2-db:DIGIT-2.9-LTS-237578ce80-13
+      - egovio/audit-service:audit-heatlh-40b1a4018a-11
+      - egovio/error-handler:master-impel-dump-5022b7acff-1
+      - egovio/playground:1.0
+      - egovio/mdms-v2-db:MDMS-v2-2.9LTS-fc6b868dce-47
+      - egovio/boundary-service-db:boundary-hierarchy-def-modified-2.9-lts-629baf086b-15
+  - name: business
+    dependencies:
+      - "core"
+    services:
+      - egovio/egov-hrms-db:v1.2.7-00a7accbda-19
+  - name: frontend
+    dependencies:
+      - "business"
+    services:
+      - egovio/digit-ui:health-dashboard-product-3cb11409c9-636
+  - name: m_pgr             #PGR
+    dependencies:
+      - "core"
+      - "business"
+    services:
+      - egovio/pgr-services-db:v1.1.7-00a7accbda-19
+  - name: dss   #dss
+    dependencies:
+      - "frontend"
+      - "core"
+      - "business"
+    services:
+      - egovio/dashboard-analytics:master-impel-f705ac483a-48
+      - egovio/dashboard-ingest:v1.1.4-72f8a8f87b-10
+      - egovio/dss-dashboard:v1.8.0-0d70d60e63-53
+  - name: Other
+    dependencies:
+      - "core"
+      - "business"
+    services:
+      ## - egovio/egov-user-event:v1.2.0-c1e1e8ce24-21 not used currently in health
+  - name: m_health
+    dependencies:
+      - "backbone"
+      - "authn-authz"
+      - "core"
+      - "business"
+      - "dss"
+      - "Other"
+      - "frontend"
+      - "m_hcmconsole"
+    services:
+      - egovio/facility-db:v1.1.2-00a7accbda-14
+      - egovio/product-db:v1.1.0-00a7accbda-31
+      - egovio/individual-db:v1.1.5-8208b6fc8f-10
+      - egovio/transformer:nigeria-changes-3164274441-225
+      - egovio/stock-db:v1.1.3-8208b6fc8f-29
+      - egovio/household-db:v1.1.3-8208b6fc8f-28
+      - egovio/project-db:v1.1.5-8208b6fc8f-12
+      - egovio/referralmanagement-db:v1.0.3-8208b6fc8f-40
+      - egovio/service-request-db:v1.0.0-00a7accbda-16
+      - egovio/health-attendance-db:v1.0.2-30824c427-11
+  - name: m_hcmconsole
+    dependencies:
+      - "backbone"
+      - "authn-authz"
+      - "core"
+    services:
+      - egovio/project-factory-db:project-factory-kafka-fix-be621a6de5-15
+      - egovio/workbench-ui:v0.2.0-6f08f64238-535
