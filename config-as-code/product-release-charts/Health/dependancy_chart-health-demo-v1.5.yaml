@@ -49,7 +49,7 @@ modules:
     dependencies:
       - "business"
     services:
-      - egovio/digit-ui:health-dashboard-product-3cb11409c9-636
+      - egovio/digit-ui:health-dashboard-product-f606bf773f-637
   - name: m_pgr             #PGR
     dependencies:
       - "core"
