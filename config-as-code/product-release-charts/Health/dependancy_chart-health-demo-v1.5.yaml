@@ -85,7 +85,7 @@ modules:
       - egovio/facility-db:v1.1.2-00a7accbda-14
       - egovio/product-db:v1.1.0-00a7accbda-31
       - egovio/individual-db:v1.1.5-8208b6fc8f-10
-      - egovio/transformer:nigeria-changes-3164274441-225
+      - egovio/transformer:stock-facility-type-update-488b321c10-226
       - egovio/stock-db:v1.1.3-8208b6fc8f-29
       - egovio/household-db:v1.1.3-8208b6fc8f-28
       - egovio/project-db:v1.1.5-8208b6fc8f-12
