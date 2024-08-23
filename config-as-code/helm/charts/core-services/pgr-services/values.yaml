@@ -177,9 +177,9 @@ env: |
   - name: EGOV_USR_EVENTS_REOPEN_CODE
     value: "REOPEN" 
   - name: ENABLE_STATE_LEVEL_SEARCH
-    value: true
+    value: "true"
   - name: ENABLE_USERTYPE_EMPLOYEE
-    value: true
+    value: "true"
   - name: PGR_STATELEVEL_TENANTID
     valueFrom:
       configMapKeyRef:
