@@ -99,4 +99,4 @@ modules:
       - "core"
     services:
       - egovio/project-factory-db:project-factory-kafka-fix-598415c0de-17
-      - egovio/workbench-ui:v0.2.0-6f08f64238-535
+      - egovio/workbench-ui:v0.2.0-a9546b5242-542
