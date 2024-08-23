@@ -123,6 +123,7 @@ func main() {
 		//if err == nil {
 		//for result != "Exit" && err == nil {
 		selectedMod = append(selectedMod, "m_health")
+		selectedMod = append(selectedMod, "m_pgr")
 		//fmt.Println("selected modules", result)
 		//result, err = sel(modules, "Select the modules you want to install, choose Exit to complete selection")
 		//}
