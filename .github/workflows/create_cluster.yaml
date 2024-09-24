@@ -50,14 +50,14 @@ jobs:
       - name: Archive config-as-code folder
         run: tar -czf config-as-code.tar.gz config-as-code/
       - name: Upload infra-as-code folder as artifact
-        uses: actions/upload-artifact@v4.1.0
+        uses: actions/upload-artifact@v4.4.0
         with:
-          name: infra-as-code-artifact
+          name: infra-as-code-artifact-input
           path: infra-as-code.tar.gz
       - name: Upload config-as-code folder as artifact
-        uses: actions/upload-artifact@v4.1.0
+        uses: actions/upload-artifact@v4.4.0
         with:
-          name: config-as-code-artifact
+          name: config-as-code-artifact-input
           path: config-as-code.tar.gz
       # - name: Install AWS IAM Authenticator
       #   run: |
@@ -104,14 +104,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Download infra-as-code folder from artifacts
-        uses: actions/download-artifact@v4.1.0
+        uses: actions/download-artifact@v4.1.8
         with:
-          name: infra-as-code-artifact
+          name: infra-as-code-artifact-input
           path: .
       - name: Download config-as-code folder from artifacts
-        uses: actions/download-artifact@v4.1.0
+        uses: actions/download-artifact@v4.1.8
         with:
-          name: config-as-code-artifact
+          name: config-as-code-artifact-input
           path: .
       - name: Extract infra-as-code folder
         run: tar -xzf infra-as-code.tar.gz
@@ -185,16 +185,14 @@ jobs:
       - name: Archive config-as-code folder
         run: tar -czf config-as-code.tar.gz config-as-code/
       - name: Upload infra-as-code folder as artifact
-        uses: actions/upload-artifact@v4.1.0
-        continue-on-error: true
+        uses: actions/upload-artifact@v4.4.0
         with:
-          name: infra-as-code-artifact
+          name: infra-as-code-artifact-creation
           path: infra-as-code.tar.gz
       - name: Upload config-as-code folder as artifact
-        uses: actions/upload-artifact@v4.1.0
-        continue-on-error: true
+        uses: actions/upload-artifact@v4.4.0
         with:
-          name: config-as-code-artifact
+          name: config-as-code-artifact-creation
           path: config-as-code.tar.gz      
 
   DIGIT-deployment:
@@ -211,14 +209,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Download infra-as-code folder from artifacts
-        uses: actions/download-artifact@v4.1.0
+        uses: actions/download-artifact@v4.1.8
         with:
-          name: infra-as-code-artifact
+          name: infra-as-code-artifact-creation
           path: .
       - name: Download config-as-code folder from artifacts
-        uses: actions/download-artifact@v4.1.0
+        uses: actions/download-artifact@v4.1.8
         with:
-          name: config-as-code-artifact
+          name: config-as-code-artifact-creation
           path: .
       - name: Extract infra-as-code folder
         run: tar -xzf infra-as-code.tar.gz
