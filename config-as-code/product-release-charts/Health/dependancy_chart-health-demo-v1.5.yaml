@@ -49,7 +49,7 @@ modules:
     dependencies:
       - "business"
     services:
-      - egovio/digit-ui:health-dashboard-digit-ui-422a6751ec-658
+      - egovio/digit-ui:health-dashboard-digit-ui-d216162056-686
   - name: m_pgr             #PGR
     dependencies:
       - "core"
@@ -98,5 +98,5 @@ modules:
       - "authn-authz"
       - "core"
     services:
-      - egovio/project-factory-db:project-factory-kafka-fix-598415c0de-17
-      - egovio/workbench-ui:v0.2.0-a9546b5242-542
+      - egovio/project-factory-db:project-factory-kafka-fix-a3ca5439b5-24
+      - egovio/workbench-ui:console-0132e7aa64-546
