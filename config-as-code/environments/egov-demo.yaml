@@ -290,15 +290,15 @@ dashboard-analytics:
   config-schema-paths: "file:///work-dir/health-campaign-config/egov-dss-dashboards/dashboard-analytics/*.json"
   initContainers:
     gitSync:
-      repo: "git@github.com:egovernments/health-campaign-config"      ##### Change repo url with Your fork Repo url
-      branch: "DEMO"                                    ##### Change repo branch with Your fork Repo branch
+      repo: "git@github.com:holashchand/health-campaign-config"      ##### Change repo url with Your fork Repo url
+      branch: "DEMO-1.5"                                          ##### Change repo branch with Your fork Repo branch
 
 dashboard-ingest:
   config-schema-paths: "file:///work-dir/health-campaign-config/egov-dss-dashboards/dashboard-ingest/*.json"
   initContainers:
     gitSync:
-      repo: "git@github.com:egovernments/health-campaign-config"      ##### Change repo url with Your fork Repo url
-      branch: "DEMO"
+      repo: "git@github.com:holashchand/health-campaign-config"      ##### Change repo url with Your fork Repo url
+      branch: "DEMO-1.5"
 
 # reportinfra >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 report:
