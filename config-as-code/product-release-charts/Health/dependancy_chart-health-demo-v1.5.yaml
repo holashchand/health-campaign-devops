@@ -44,7 +44,7 @@ modules:
     dependencies:
       - "core"
     services:
-      - egovio/health-hrms-db:master-flyway-imageupdate-60353d5c64-31
+      - egovio/egov-hrms-db:master-flyway-imageupdate-60353d5c64-20
   - name: frontend
     dependencies:
       - "business"
