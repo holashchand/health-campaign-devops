@@ -21,30 +21,30 @@ modules:
       - "authn-authz"
       - "frontend"
     services:
-      - egovio/egov-accesscontrol:v1.1.3-72f8a8f87b-24
-      - egovio/egov-enc-service:v1.1.2-72f8a8f87b-9
-      - egovio/egov-localization:v1.1.3-72f8a8f87b-6
-      - egovio/egov-idgen:v1.2.3-72f8a8f87b-7
-      - egovio/egov-filestore:v1.2.4-72f8a8f87b-10
-      - egovio/egov-indexer:indexer-17-searchBody-1799f17903-57
-      - egovio/egov-notification-mail:health-digit-master-6865af2823-2
-      - egovio/egov-notification-sms:v1.1.3-48a03ad7bb-10
-      - egovio/egov-otp:v1.2.2-72f8a8f87b-12
-      - egovio/egov-persister:v1.1.5-3371bc2-5
+      - egovio/egov-accesscontrol:DIGIT-2.9-LTS-237578ce80-10
+      - egovio/egov-enc-service-db:DIGIT-2.9-LTS-237578ce80-21
+      - egovio/egov-localization-db:DIGIT-2.9-LTS-237578ce80-10
+      - egovio/egov-idgen-db:DIGIT-2.9-LTS-07f47790b8-8
+      - egovio/egov-filestore-db:DIGIT-2.9-LTS-237578ce80-14
+      - egovio/egov-indexer-db:2.9.1-c781a2f714-65
+      - egovio/egov-notification-mail:DIGIT-2.9-LTS-07f47790b8-5
+      - egovio/egov-notification-sms:DIGIT-2.9-LTS-07f47790b8-7
+      - egovio/egov-otp-db:DIGIT-2.9-LTS-07f47790b8-6
+      - egovio/egov-persister:DIGIT-2.9-LTS-07f47790b8-8
       ## - egovio/egov-url-shortening:v1.1.2-1715164454-3 not used in health now
-      - egovio/egov-user:health-digit-master-e27b970-31
-      - egovio/user-otp:health-digit-master-6865af2823-3
-      - egovio/egov-workflow-v2-db:DIGIT-2.9-LTS-237578ce80-13
-      - egovio/audit-service:audit-heatlh-40b1a4018a-11
+      - egovio/egov-user-db:DIGIT-2.9-LTS-c33cfe45ab-19
+      - egovio/user-otp:DIGIT-2.9-LTS-07f47790b8-9
+      - egovio/egov-workflow-v2-db:2.9.1-80b58dc788-15
+      - egovio/audit-service-db:DIGIT-2.9-LTS-07f47790b8-12
       - egovio/error-handler:master-impel-dump-5022b7acff-1
       - egovio/playground:1.0
-      - egovio/mdms-v2-db:MDMS-v2-2.9LTS-fc6b868dce-47
-      - egovio/boundary-service-db:boundary-hierarchy-def-modified-2.9-lts-629baf086b-15
+      - egovio/mdms-v2:MDMS-v2-2.9LTS-837232ac67-71
+      - egovio/boundary-service-db:v1.0.0-063968adc7-18
   - name: business
     dependencies:
       - "core"
     services:
-      - egovio/egov-hrms-db:v1.2.7-00a7accbda-19
+      - egovio/health-hrms-db:master-flyway-imageupdate-60353d5c64-31
   - name: frontend
     dependencies:
       - "business"
@@ -62,7 +62,7 @@ modules:
       - "core"
       - "business"
     services:
-      - egovio/dashboard-analytics:master-impel-f705ac483a-48
+      - dashboard-analytics:analytics-es8-auth-8f6d1faeb0-50
       - egovio/dashboard-ingest:v1.1.4-72f8a8f87b-10
       - egovio/dss-dashboard:v1.8.0-0d70d60e63-53
   - name: Other
@@ -85,12 +85,12 @@ modules:
       - egovio/facility-db:v1.1.2-00a7accbda-14
       - egovio/product-db:v1.1.0-00a7accbda-31
       - egovio/individual-db:v1.1.5-8208b6fc8f-10
-      - egovio/transformer:stock-facility-type-update-488b321c10-226
+      - egovio/transformer:HDDF-1277-2f487e8dc5-256
       - egovio/stock-db:v1.1.3-8208b6fc8f-29
       - egovio/household-db:v1.1.3-8208b6fc8f-28
       - egovio/project-db:v1.1.5-8208b6fc8f-12
       - egovio/referralmanagement-db:v1.0.3-8208b6fc8f-40
-      - egovio/service-request-db:v1.0.0-00a7accbda-16
+      - egovio/service-request-db:v1.0.1-a0e714254c-23
       - egovio/health-attendance-db:v1.0.2-30824c427-11
   - name: m_hcmconsole
     dependencies:
