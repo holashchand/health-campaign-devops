@@ -260,4 +260,4 @@ env: |
   - name: EGOV_PROGRAM_MANDATE_DIVIDING_FACTOR
     value: "1.8"
   - name: EGOV_PROJECT_TARGET_NUMBER_TYPE
-    value: "PER_DAY"
+    value: "OVERALL"
