@@ -447,3 +447,15 @@ env: |
     value: "1737552887000"
   - name: EGOV_INGESTION_INTERVAL_MAX_DATE
     value: "1757639287000"
+  - name: EGOV_ATTENDANCE_CREATE_PATH
+    value: "/health-attendance/v1/_create"
+  - name: EGOV_ATTENDANCE_SEARCH_PATH
+    value: "/health-attendance/v1/_search"
+  - name: EGOV_ATTENDANCE_STAFF_CREATE_PATH
+    value: "/health-attendance/staff/v1/_create"
+  - name: EGOV_ATTENDANCE_STAFF_SEARCH_PATH
+    value: "/health-attendance/staff/v1/_search"
+  - name: EGOV_ATTENDANCE_ATTENDEES_CREATE_PATH
+    value: "/health-attendance/attendee/v1/_create"
+  - name: EGOV_ATTENDANCE_ATTENDEES_SEARCH_PATH
+    value: "/health-attendance/attendee/v1/_search"
