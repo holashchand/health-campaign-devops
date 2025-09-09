@@ -1012,4 +1012,14 @@ jupyterhub:
         secretName: hcm-demo.digit.org-tls-certs
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-
+hcm-moz-impl:
+  replicas: 1
+  heap: "-Xmx1536m -Xms1536m"
+  memory_limits: "2Gi"
+  startDate: "11/09/2025"
+  endDate: "30/09/2025"
+  resources:
+    requests:
+      memory: "2Gi"
+    limits:
+      memory: "2Gi"
